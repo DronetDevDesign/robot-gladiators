@@ -1,3 +1,14 @@
+// Game states:
+
+// "WIN" - Player robot has defeated all enemy-robots:
+
+//    * Fight all enemy-robots
+
+//    * Defeat each enemy-robot
+
+// "LOSE" - Player robot's health is zero or less:
+
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -15,6 +26,7 @@ var fight = function() {
   window.alert("Welcome to Robot Gladiators");
 
   var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose");
+
   // If player chooses to fight, then fight.
   if (promptFight === "fight" || promptFight === "FIGHT") {
     // Remove enemy's health by subtracting the amount set in the playerAttack variable.
@@ -28,10 +40,8 @@ var fight = function() {
   } else {
     window.alert(enemyName + " still has " + enemyHealth + " health points remaining.");
   }
- 
   // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
   playerHealth = playerHealth - enemyAttack;
-
   console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health points remaining.");
 
   // check player's health.
@@ -56,11 +66,10 @@ var fight = function() {
       fight();
     }
 
-      window.alert(playerName + " has chosen to skip the fight");
-    } else {
-      window.alert("You need to choose a valid option. Try again!");
-    }
-
+    window.alert(playerName + " has chosen to skip the fight");
+  } else {
+    window.alert("You need to choose a valid option. Try again!");
+  }
 };
 
-fight();
+// fight();
